@@ -19,13 +19,20 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header>
       <div class="container">
+        <!-- NAV -->
         <nav
+          id="mynav"
           class="navbar navbar-expand-lg fixed-top bg-transparent navbar-dark"
         >
           <div class="container">
@@ -59,13 +66,13 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Quienes somos</a>
+                  <a class="nav-link" href="#quienes-somos">Quienes somos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Destacados</a>
+                  <a class="nav-link" href="#destacados">Destacados</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contacto</a>
+                  <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
               </ul>
             </div>
@@ -122,15 +129,20 @@
       </div>
     </header>
     <!-- Section Quienes Somos -->
-    <section>
+    <section id="quienes-somos" class="d-none d-md-block">
       <div class="container py-5">
         <h2 class="section-title pb-4 mb-5 text-center text-white">
           ¿Quiénes somos?
         </h2>
         <div class="row row-cols-1 row-cols-md-3">
           <div class="col text-center text-white">
-            <div class="w-100 bg-info mb-2">
-              <i class="fas fa-plane"></i>
+            <div
+              class="w-100 bg-info mb-2"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Vuelos"
+            >
+              <i class="fas fa-plane fs-3 py-2"></i>
             </div>
             <p class="text-start py-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
@@ -150,13 +162,23 @@
               corrupti sunt eos molestias ipsum. Quibusdam alias porro iusto
               illo voluptate sint accusantium minus doloribus sequi!
             </p>
-            <div class="w-100 bg-info">
-              <i class="fas fa-mountain"></i>
+            <div
+              class="w-100 bg-info"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Turismo"
+            >
+              <i class="fas fa-mountain fs-3 py-2"></i>
             </div>
           </div>
           <div class="col text-center text-white">
-            <div class="w-100 bg-info mb-2">
-              <i class="fas fa-route"></i>
+            <div
+              class="w-100 bg-info mb-2"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Rutas"
+            >
+              <i class="fas fa-route fs-3 py-2"></i>
             </div>
             <p class="text-start py-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
@@ -171,7 +193,7 @@
       </div>
     </section>
     <!-- Section Destacados -->
-    <section>
+    <section id="destacados">
       <div class="container py-5">
         <h2 class="section-title pb-4 mb-5 text-center text-white">
           Destacados
@@ -187,6 +209,14 @@
                   lead-in to additional content. This content is a little bit
                   longer.
                 </p>
+                <button
+                  class="btn btn-dark w-100 button-modal"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
@@ -195,7 +225,19 @@
               <img src="assets/img/card2.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a short card.</p>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+                <button
+                  class="btn btn-dark w-100 button-modal"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
@@ -206,8 +248,17 @@
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
                   This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
+                  lead-in to additional content. This content is a little bit
+                  longer.
                 </p>
+                <button
+                  class="btn btn-dark w-100 button-modal"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
@@ -221,31 +272,83 @@
                   lead-in to additional content. This content is a little bit
                   longer.
                 </p>
+                <button
+                  class="btn btn-dark w-100 button-modal"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Agencia Viajes Chile
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body pb-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id nobis
+            ullam rem iure. Voluptates sint labore, quis eligendi quos ipsa.
+            Quis, excepturi nesciunt laborum eveniet quia non deleniti. Eum
+            asperiores, placeat odit a cum dolores modi maxime alias iure eaque
+            aspernatur quisquam voluptatum nisi doloremque provident dolorum
+            facilis! Quis, quae. Incidunt quod eum perferendis a dolorem illo,
+            voluptates itaque numquam ea totam similique odio, ipsum
+            consequuntur aliquam quae soluta architecto vel dignissimos
+            exercitationem molestias natus provident? Odio unde dolores tenetur
+            doloremque? Accusamus distinctio quo, ipsam natus cumque culpa harum
+            hic asperiores enim magni, tempora repellendus fuga quis consequatur
+            reiciendis necessitatibus.
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- TypeForm -->
-    <section>
+    <section id="contacto">
       <div class="container py-5">
         <h2 class="section-title pb-4 mb-5 text-center text-white">Contacto</h2>
-        <div data-tf-widget="oFdk9wog" style="width:100%;height:400px;"></div>
+        <div data-tf-widget="oFdk9wog" style="width: 100%; height: 400px"></div>
       </div>
     </section>
     <footer class="px-5 bg-info text-white">
-      <div class="container d-flex justify-content-around mx-0">
-        <h6 class="d-inline-flex fs-2">VIAJES CHILE</h6>
-        <div class="d-flex justify-content-around w-25 fs-2 my-auto">
-          <i class="fab fa-github-square"></i>
-          <i class="fab fa-linkedin"></i>
-          <i class="fab fa-twitter-square"></i>
-          <i class="fab fa-facebook-square"></i>
+      <div class="row py-2">
+        <div class="col-12 col-md-6">
+          <h2 class="text-nowrap text-center ">Viajes Chile</h2>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="container">
+            <div class="d-flex justify-content-center ">
+              <div class="p-2 bd-highlight"><i class="fab fa-github fa-2x"></i></div>
+              <div class="p-2 bd-highlight"><i class="fab fa-linkedin fa-2x"></i></div>
+              <div class="p-2 bd-highlight"><i class="fab fa-twitter-square fa-2x"></i></div>
+              <div class="p-2 bd-highlight"><i class="fab fa-facebook-square fa-2x"></i></div>
+            </div>
+          </div>
         </div>
       </div>
-      
     </footer>
+    
     <!-- Boostrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
